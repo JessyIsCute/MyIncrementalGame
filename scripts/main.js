@@ -1,7 +1,7 @@
  const global = {
      table: [],
      count: 0
- }
+ } //kikj]j
 
  window.addEventListener("DOMContentLoaded", () => {
      let button = document.getElementById("red");
