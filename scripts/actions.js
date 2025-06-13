@@ -37,13 +37,13 @@ const movePlayer = (direction) => {
      gameState.table[location.x + location.y * gameState.mapWidth].cell.classList.remove("player");
 
      if(direction){
-     if (direction.id === "buttonup") {
+     if (direction.id === "up") {
           location.y = Math.max(0, location.y - 1);
-     } else if (direction.id === "buttondown") {
+     } else if (direction.id === "down") {
           location.y = Math.min(gameState.mapHeight - 1, location.y + 1);
-     } else if (direction.id === "buttonleft") {
+     } else if (direction.id === "left") {
           location.x = Math.max(0, location.x - 1);
-     } else if (direction.id === "buttonright") {
+     } else if (direction.id === "right") {
           location.x = Math.min(gameState.mapWidth - 1, location.x + 1);
      }
      } 
