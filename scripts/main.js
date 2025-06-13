@@ -33,6 +33,7 @@ const updateGame = (elapsedTime) => {
         gameState.interactCostDisplay.innerText =  Math.floor(gameState.interactCost);
      }
 
+     
 
 }
 
@@ -54,12 +55,14 @@ const createTable = () => {
           for (let x = 0; x < gameState.mapWidth; x++) {
                let cell = document.createElement("td");
 
+              
                let worldspace = {
-                cell: cell,
-                x: x,
-                y: y,
-                celltype: "Hidden",
-                cellActived: false,
+                    cell: cell, // This is the DOM element
+                    x: x,
+                    y: y,
+                    celltype: "hidden",
+                    cellDescription: "This is a hidden cell",
+                    cellActived: false
                };
 
                row.appendChild(cell);
@@ -67,14 +70,17 @@ const createTable = () => {
                cell.classList.add("hidden");
                
                cell.addEventListener("mousedown", () => {
-                document.getElementById("cellInfo").textContent =
-                 `Location: (${worldspace.x}, ${worldspace.y}), Type: ${worldspace.celltype} Active: ${worldspace.cellActived}`;
+               updateCellInfo(worldspace.x, worldspace.y);
+               document.getElementById("cellDescriptionDisplay").innerText = worldspace.cellDescription;
+               document.getElementById("cellTypeDisplay").innerText = worldspace.celltype;
+
                });
 
                gameState.table.push(worldspace);
           }
      }
 
-     gameState.table[gameState.currentLocation.x + gameState.currentLocation.y * gameState.mapWidth].cell.classList.add("player");
+     gameState.table[gameState.currentLocation.x + gameState.currentLocation.y * gameState.mapWidth].cell.classList.add("empty" , "player");
+     gameState.table[gameState.currentLocation.x + gameState.currentLocation.y * gameState.mapWidth].celltype = "empty";
      revealAroundPlayer();
 }
