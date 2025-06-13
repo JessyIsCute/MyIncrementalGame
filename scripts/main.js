@@ -1,9 +1,9 @@
  const global = {
      table: [],
-     mapWidth: 10,
-     mapHeight: 10,
+     mapWidth: 11,
+     mapHeight: 11,
      count: 0,
-     currentLocation: { x: 0, y: 0 }
+     currentLocation: { x: 5, y: 5 }
 
  } 
 
@@ -11,7 +11,7 @@
      let waterButton = document.getElementById("waterButton");
      waterButton.addEventListener("click", increaseCount);
      createTable();
-
+     
      let buttonup = document.getElementById("buttonup");
      let buttondown = document.getElementById("buttondown");
      let buttonleft = document.getElementById("buttonleft");
@@ -20,6 +20,9 @@
      buttondown.addEventListener("click", () => movePlayer(buttondown))
      buttonleft.addEventListener("click", () => movePlayer(buttonleft))
      buttonright.addEventListener("click", () => movePlayer(buttonright))
+
+     movePlayer();
+     runGameLoop();
  }
 );
 
@@ -52,7 +55,7 @@ const createTable = () => {
                 cell: cell,
                 x: x,
                 y: y,
-                celltype: "grass"
+                celltype: "Hidden"
                };
 
                cell.textContent = `${x} ${y} ${worldspace.celltype} "\n"`;
@@ -71,6 +74,9 @@ const movePlayer = (direction) => {
      console.log(global.table[location.x+location.y*global.mapWidth])
      global.table[location.x + location.y * global.mapWidth].cell.classList.remove("player");
 
+     if(direction){
+
+     
      if (direction.id === "buttonup") {
           location.y = Math.max(0, location.y - 1);
      } else if (direction.id === "buttondown") {
@@ -80,7 +86,9 @@ const movePlayer = (direction) => {
      } else if (direction.id === "buttonright") {
           location.x = Math.min(global.mapWidth - 1, location.x + 1);
      }
+     }
      
+     console.log(`Player moved to: ${location.x}, ${location.y}`);
      global.table[location.x + location.y * global.mapWidth].cell.classList.add("player");
      let newLocation = { x: location.x, y: location.y };
      
