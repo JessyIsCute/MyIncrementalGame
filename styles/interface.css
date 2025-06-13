@@ -1,16 +1,28 @@
 .worldspace {
-  background-color: #df3d3d;
-  font-family: Arial, sans-serif;
-  color: #333;
-  width: 5vw;
-  height: 5vw;
+    width: 3vw;
+    height: 3vw;
+
+    background-color: #e4d8d8;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    text-align: center;
+
+    padding: 0px;
+    margin: 0px;
+    border: 2px solid rgb(0, 0, 0);
+}
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: auto;
 }
 
-#world {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.player {
+    
+    outline: 1vw solid rgb(175, 29, 163);
+    
 }
+
 
 #verticleButtons {
     display: flex;
@@ -35,8 +47,40 @@
     align-items: center;
 }
 
+#world {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(120, 150, 214);
+}
+
+.horizontalMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(100, 120, 180);
+}
+
+.verticleMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(100, 120, 180);
 }
