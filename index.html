@@ -14,13 +14,13 @@
     
             <div id="game">
                 <h2>Game Interface</h2>
-                <p>Clickssss the button to gain water.</p>
-                <button id="waterButton">Gain Water</button>
+                <button id="prestige">Prestige</button>
             </div>
     
             <div id="resources">
+                <h2>Resources</h2>
                 <div id="resource-water">
-                    <p>Water: </p> <p id="water">0</p>
+                    <p>Water: </p> <p class="waterDisplay" id="water">0</p>
                 </div>
                 <div id="resource-gold">
                     <p>Gold: </p> <p id="gold">0</p>
@@ -28,14 +28,24 @@
               
             </div>
     
-            <div id="upgrades">
-                <h2>Upgrades</h2>
-                <button id="upgrade1">Upgrade 1</button>
-                <button id="upgrade2">Upgrade 2</button>
+            <div id="actions">
+                <h2>Actions</h2>
+                <div id="action-move">
+                    <p>Move Cost: </p> <p class="waterDisplay" id="move">0</p> <p>/</p> <p id="moveCostDisplay">10</p> <p> Water</p>
+                </div>
+                <div id="action-interact">
+                    <p>Interact: </p> <p class="waterDisplay" id="interact">0</p> <p>/</p> <p id="interactCostDisplay">5</p> <p> Gold</p>
+                </div>
             </div>
 
             <div id="cellInfo">
-
+                <h2>Cell Info</h2>
+                <div id="cellInfo-type">
+                    <p>Cell Type: </p> <span id="cellTypeDisplay">None</span>
+                </div>
+                <div id="cellInfo-resources">
+                    <p>Resources: </p> <span id="cellDescription">None</span>
+                </div>
             </div>
         </div>
 
@@ -56,5 +66,8 @@
         </div>
     </div>
     <script src="scripts/main.js"></script> 
+    <script src="scripts/gameState.js"></script>
+    <script src="scripts/actions.js"></script>
+    <script src="scripts/inputs.js"></script>
 </body>
 </html>

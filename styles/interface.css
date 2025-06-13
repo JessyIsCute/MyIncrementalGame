@@ -1,6 +1,6 @@
 .worldspace {
-    width: 3vw;
-    height: 3vw;
+    width: 6vw;
+    height: 6vw;
 
     background-color: #e4d8d8;
     font-family: Arial, sans-serif;
@@ -23,9 +23,7 @@ table{
 }
 
 .player {
-    
     outline: 0.3vw solid rgb(175, 29, 163);
-    
 }
 
 
@@ -70,6 +68,10 @@ body {
     background-color: rgb(120, 150, 214);
 }
 
+div {
+    outline: #000000 1px solid;
+}
+
 .horizontalMenu {
     display: flex;
     flex-direction: row;
@@ -92,6 +94,11 @@ body {
     background-color: rgb(100, 120, 180);
 }
 
+.horizontalMenu > div {
+    justify-content: left;
+    align-items: flex-start;
+}
+
 #resources div {
     height: 1.5em;
     display: flex;
@@ -100,3 +107,13 @@ body {
     align-items: center;
     margin: 0;
 }
+
+#actions div {
+    height: 1.5em;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    margin: 0;
+}
+
