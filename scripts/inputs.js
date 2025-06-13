@@ -3,7 +3,7 @@ const inputs = () => {
 
     // Listen for keyboard events
     document.addEventListener("keydown", function(event) {
-        console.log("boop!");
+        
         switch (event.key) {
             case "ArrowUp":
             case "w":

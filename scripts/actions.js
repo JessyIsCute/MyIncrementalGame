@@ -4,18 +4,30 @@ const interactWorld = () => {
      let location = gameState.currentLocation;
      let celltype = gameState.table[location.x + location.y * gameState.mapWidth].celltype;
 
-     if(gameState.interactCost > gameState.water) {
-          return;
-     }
-     else {
-          gameState.water -= gameState.interactCost;
-          gameState.interactCost *= 2;
-     }
+   
 
-     console.log(gameState.table[location.x + location.y * gameState.mapWidth].cell.activated);
-     gameState.table[location.x + location.y * gameState.mapWidth].cell.activated = true;
-     console.log(gameState.table[location.x + location.y * gameState.mapWidth].cell.activated);
-     
+     gameState.table[location.x + location.y * gameState.mapWidth].cellActived = true;
+
+     console.log("Interacting with cell at", location, "of type", celltype);
+        if (celltypes[celltype].interactable && gameState.interactCost <= gameState.water && !gameState.table[location.x + location.y * gameState.mapWidth].cellActivated) {
+            gameState.water -= gameState.interactCost;
+            gameState.interactCost *= 2;
+            gameState.table[location.x + location.y * gameState.mapWidth].cellActivated = true;
+            
+            console.log("Interacted with cell at", location, "of YIPEEEEEEEEE", celltype);
+            switch (celltype) {
+                case "water":
+                    gameState.waterIncrement += 1;
+                    break;
+                case "tree":
+                    gameState.waterIncrement *= 1.1; // Trees give less water
+                    break;
+                case "rock":
+                    break;
+                default:
+            }
+        }
+            
 }
 
 
@@ -71,7 +83,7 @@ function pickCellType(celltypes, totalChance) {
         }
     }
     // Fallback: return a default type if none matched
-    return "empty";
+    return "Player"; // or any other default type
 }
 
 function revealCell(worldspace, celltypes) {

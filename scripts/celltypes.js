@@ -21,7 +21,8 @@ const celltypes = {
         class: "hidden",
         description: "This cell is hidden and not yet Empty.",
         interactable: false,
-        appearenceChance: "special", 
+        appearenceChance: null, 
+        traversable: "special", 
         },
     "empty": {
         class: "empty",
@@ -34,7 +35,7 @@ const celltypes = {
         class: "water",
         description: "This cell contains water.",
         interactable: true,
-        appearenceChance: 0.9, // 10% chance to appear
+        appearenceChance: 0.3, // 10% chance to appear
         traversable: true, // Can be traversed by the player
 
     },
@@ -42,16 +43,17 @@ const celltypes = {
         class: "tree",
         description: "This cell contains a tree.",
         interactable: true,
-        appearenceChance: 0.95, // 5% chance to appear
+        appearenceChance: 0.1, // 5% chance to appear
         traversable: true, // Can be traversed by the player
 
     },
     "rock": {
         class: "rock",
-        description: "This cell contains a rock, Can currently traverse: " + traversable,
+        description: "This cell contains a rock.",
         interactable: true,
-        appearenceChance: 0.5, // 2% chance to appear
+        appearenceChance: 0.7, // 2% chance to appear
         traversable: false, // 
-    },
+        
+    }
     // Add more cell types as needed
 };
