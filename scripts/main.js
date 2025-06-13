@@ -76,4 +76,5 @@ const createTable = () => {
      }
 
      gameState.table[gameState.currentLocation.x + gameState.currentLocation.y * gameState.mapWidth].cell.classList.add("player");
+     revealAroundPlayer();
 }
